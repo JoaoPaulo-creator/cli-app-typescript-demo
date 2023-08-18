@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx  src/index.ts"
+    "dev": "tsx  src/index.ts",
+    "build": "tsc",
+    "generate:bin": "pkg . -t node18-win-x64"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +20,8 @@
   "devDependencies": {
     "@types/node": "^20.4.5",
     "@types/yargs": "^17.0.24"
+  },
+  "bin": {
+    "scripts": "dist/app.js"
   }
 }

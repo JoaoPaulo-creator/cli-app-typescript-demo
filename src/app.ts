@@ -1,19 +1,6 @@
 import { createCommand } from "commander";
-import { randomUUID } from "node:crypto";
-
-function returnId() {
-  return {
-    message: "Criando simulation id",
-    id: randomUUID(),
-  };
-}
-
-function receiveId(id: string) {
-  console.log({
-    message: "Criando proposta",
-    id,
-  });
-}
+import { returnId } from "./simulation";
+import { receiveId } from "./proposal";
 
 const commander = createCommand();
 
@@ -29,6 +16,10 @@ commander
 
     if (!simulation) {
       throw new Error("Uma simulação precisa ser criada antes");
+    }
+
+    if (simulation) {
+      console.log("created simulation: ", id);
     }
 
     if (proposal) {
